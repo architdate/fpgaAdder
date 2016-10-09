@@ -1,0 +1,44 @@
+module mojo_top (
+    input clk,              
+    input rst_n,            
+    output io_led[5],         // LED control for the 5 LED's for better visibility           
+    output spi_miso,        
+    output spi_channel [4], 
+    output avr_rx,          
+    output a,                  //taken as an output because it outputs to the PCB as an input to the PCB
+    output b,
+    output c,
+    input sum,
+    input carry,
+    input io_dip[3]           // First 3 switches on the IO-Shield
+    
+  ) {
+  
+  sig rst;                  // reset signal
+  
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    reset_conditioner reset_cond;
+  }
+  
+  always {
+    reset_cond.in = ~rst_n; // input raw inverted reset signal
+    rst = reset_cond.out;   // conditioned reset
+    
+    spi_miso = bz;          // not using SPI
+    spi_channel = bzzzz;    // not using flags
+    avr_rx = bz;            // not using serial         n1};    
+    
+    io_led[0] = io_dip[0]; // connect all the led's to the switches (a,b,c) for trouble
+    io_led[1] = io_dip[1]; // shooting what is wrong with the inputs and if it is 
+    io_led[2] = io_dip[2]; // being recorded.
+    
+    a = io_dip[0]; // initializing the outputs from the switches
+    b = io_dip[1];
+    c = io_dip[2];
+    
+    io_led[3] = sum; // sum LED
+    io_led[4] = carry; // carry LED
+  }
+}

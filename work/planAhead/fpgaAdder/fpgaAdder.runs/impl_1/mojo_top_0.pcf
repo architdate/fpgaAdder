@@ -1,0 +1,23 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sun Oct 09 22:31:16 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+CONFIG VCCAUX = "3.3";
+COMP "clk" LOCATE = SITE "P56" LEVEL 1;
+COMP "carry" LOCATE = SITE "P87" LEVEL 1;
+COMP "io_led[0]" LOCATE = SITE "P97" LEVEL 1;
+COMP "io_led[1]" LOCATE = SITE "P98" LEVEL 1;
+COMP "io_led[2]" LOCATE = SITE "P94" LEVEL 1;
+COMP "io_dip[0]" LOCATE = SITE "P120" LEVEL 1;
+COMP "io_led[3]" LOCATE = SITE "P95" LEVEL 1;
+COMP "io_dip[1]" LOCATE = SITE "P121" LEVEL 1;
+COMP "io_led[4]" LOCATE = SITE "P92" LEVEL 1;
+COMP "io_dip[2]" LOCATE = SITE "P118" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "P38" LEVEL 1;
+COMP "sum" LOCATE = SITE "P84" LEVEL 1;
+COMP "a" LOCATE = SITE "P74" LEVEL 1;
+COMP "b" LOCATE = SITE "P78" LEVEL 1;
+COMP "c" LOCATE = SITE "P80" LEVEL 1;
+SCHEMATIC END;
+
